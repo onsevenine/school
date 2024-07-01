@@ -1,12 +1,17 @@
 ---
-const { style } = Astro.props;
+const { title, style } = Astro.props;
 ---
 
 <div class="container" style={style}>
+  {title && <h2 class="font-title-large">{title}</h2>}
   <slot />
 </div>
 
 <style>
+  h2 {
+    margin-bottom: 1rem;
+  }
+
   .container {
     max-width: 1000px;
     margin: auto;

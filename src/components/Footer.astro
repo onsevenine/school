@@ -4,37 +4,48 @@ import brand_footer from "./../assets/brand_footer.svg";
 ---
 
 <footer>
-  <div class="brand_name">
-    <Image src={brand_footer} alt="Maa Saraswati Public School" height={40} />
-    <!-- <h2 class="font-title-large">
+  <div class="main">
+    <div class="brand_name">
+      <Image src={brand_footer} alt="Maa Saraswati Public School" height={40} />
+      <!-- <h2 class="font-title-large">
       <span class="font-headline-medium">Maa Saraswati</span><br /> Public School
     </h2> -->
+    </div>
+    <div class="footer_links">
+      <h2 class="font-title-medium">Quick Links</h2>
+      <ul>
+        <li class="font-label-large">Privacy Policy</li>
+        <li class="font-label-large">Terms and Conditions</li>
+      </ul>
+    </div>
+    <div class="footer_links">
+      <h2 class="font-title-medium">About</h2>
+      <ul>
+        <li class="font-label-large">Home</li>
+        <li class="font-label-large">About Us</li>
+        <li class="font-label-large">Location</li>
+      </ul>
+    </div>
   </div>
-  <div class="footer_links">
-    <h2 class="font-title-medium">Quick Links</h2>
-    <ul>
-      <li class="font-label-large">Privacy Policy</li>
-      <li class="font-label-large">Terms and Conditions</li>
-    </ul>
-  </div>
-  <div class="footer_links">
-    <h2 class="font-title-medium">About</h2>
-    <ul>
-      <li class="font-label-large">Home</li>
-      <li class="font-label-large">About Us</li>
-      <li class="font-label-large">Location</li>
-    </ul>
+  <div class="copyright">
+    <h3>© Copyright 2024</h3>
   </div>
 </footer>
 
 <style>
-  footer {
+  .main {
     width: 100%;
     background: var(--color-4);
     padding: 4rem;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     justify-content: space-between;
+  }
+
+  .copyright {
+    background: var(--color-1);
+    padding: 1rem 4rem;
+    color: white;
   }
 
   .brand_name > h2 {
