@@ -1,0 +1,168 @@
+---
+import "@fontsource/source-sans-pro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Source Sans Pro", sans-serif;
+
+    --color-1: #973131;
+    --color-2: #e0a75e;
+    --color-3: #f9d689;
+    --color-4: #f5e7b2;
+
+    --display-large-font-size: 57pt;
+    --display-large-line-height: 64pt;
+    --display-medium-font-size: 45pt;
+    --display-medium-line-height: 52pt;
+    --display-small-font-size: 36pt;
+    --display-small-line-height: 44pt;
+
+    --headline-large-font-size: 32pt;
+    --headline-large-line-height: 40pt;
+    --headline-medium-font-size: 28pt;
+    --headline-medium-line-height: 36pt;
+    --headline-small-font-size: 24pt;
+    --headline-small-line-height: 32pt;
+
+    --title-large-font-size: 22pt;
+    --title-large-line-height: 28pt;
+    --title-medium-font-size: 16pt;
+    --title-medium-line-height: 24pt;
+    --title-medium-font-weight: 500;
+    --title-small-font-size: 14pt;
+    --title-small-line-height: 20pt;
+    --title-small-font-weight: 500;
+
+    --body-large-font-size: 16pt;
+    --body-large-line-height: 24pt;
+    --body-medium-font-size: 14pt;
+    --body-medium-line-height: 20pt;
+    --body-small-font-size: 12pt;
+    --body-small-line-height: 16pt;
+
+    --label-large-font-size: 14pt;
+    --label-large-line-height: 20pt;
+    --label-large-font-weight: 500;
+    --label-medium-font-size: 12pt;
+    --label-medium-line-height: 16pt;
+    --label-medium-font-weight: 500;
+    --label-small-font-size: 11pt;
+    --label-small-line-height: 16pt;
+    --label-small-font-weight: 500;
+
+    --min-large: 1440px;
+    --min-medium: 1240px;
+    --max-medium: 1439px;
+    --min-medium-2: 905px;
+    --max-medium-2: 1239px;
+    --min-small: 600px;
+    --max-small: 904px;
+    --min-small-2: 499px;
+    --max-small-2: 599px;
+  }
+
+  .font-display-large {
+    font-size: var(--display-large-font-size);
+    line-height: var(--display-large-line-height);
+  }
+
+  .font-display-medium {
+    font-size: var(--display-medium-font-size);
+    line-height: var(--display-medium-line-height);
+  }
+
+  .font-display-small {
+    font-size: var(--display-small-font-size);
+    line-height: var(--display-small-line-height);
+  }
+
+  .font-headline-large {
+    font-size: var(--headline-large-font-size);
+    line-height: var(--headline-large-line-height);
+  }
+
+  .font-headline-medium {
+    font-size: var(--headline-medium-font-size);
+    line-height: var(--headline-medium-line-height);
+  }
+
+  .font-headline-small {
+    font-size: var(--headline-small-font-size);
+    line-height: var(--headline-small-line-height);
+  }
+
+  .font-title-large {
+    font-size: var(--title-large-font-size);
+    line-height: var(--title-large-line-height);
+    font-weight: var(--title-medium-font-weight);
+  }
+
+  .font-title-medium {
+    font-size: var(--title-medium-font-size);
+    line-height: var(--title-medium-line-height);
+    font-weight: var(--title-medium-font-weight);
+  }
+
+  .font-title-small {
+    font-size: var(--title-small-font-size);
+    line-height: var(--title-small-line-height);
+    font-weight: var(--title-small-font-weight);
+  }
+
+  .font-body-large {
+    font-size: var(--body-large-font-size);
+    line-height: var(--body-large-line-height);
+  }
+
+  .font-body-medium {
+    font-size: var(--body-medium-font-size);
+    line-height: var(--body-medium-line-height);
+  }
+
+  .font-body-small {
+    font-size: var(--body-small-font-size);
+    line-height: var(--body-small-line-height);
+  }
+
+  .font-label-large {
+    font-size: var(--label-large-font-size);
+    line-height: var(--label-large-line-height);
+    font-weight: var(--label-large-font-weight);
+  }
+
+  .font-label-medium {
+    font-size: var(--label-medium-font-size);
+    line-height: var(--label-medium-line-height);
+    font-weight: var(--label-medium-font-weight);
+  }
+
+  .font-label-small {
+    font-size: var(--label-small-font-size);
+    line-height: var(--label-small-line-height);
+    font-weight: var(--label-small-font-weight);
+  }
+</style>

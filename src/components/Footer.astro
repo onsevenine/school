@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import brand_footer from "./../assets/brand_footer.svg";
+---
+
+<footer>
+  <div class="brand_name">
+    <Image src={brand_footer} alt="Maa Saraswati Public School" height={40} />
+    <!-- <h2 class="font-title-large">
+      <span class="font-headline-medium">Maa Saraswati</span><br /> Public School
+    </h2> -->
+  </div>
+  <div class="footer_links">
+    <h2 class="font-title-medium">Quick Links</h2>
+    <ul>
+      <li class="font-label-large">Privacy Policy</li>
+      <li class="font-label-large">Terms and Conditions</li>
+    </ul>
+  </div>
+  <div class="footer_links">
+    <h2 class="font-title-medium">About</h2>
+    <ul>
+      <li class="font-label-large">Home</li>
+      <li class="font-label-large">About Us</li>
+      <li class="font-label-large">Location</li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  footer {
+    width: 100%;
+    background: var(--color-4);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    justify-content: space-between;
+  }
+
+  .brand_name > h2 {
+    display: inline-block;
+    width: 400px;
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    span {
+      font-weight: 800;
+    }
+  }
+
+  .footer_links {
+    h2 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+</style>

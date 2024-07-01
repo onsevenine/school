@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import { fade } from "astro:transitions";
+
+const images = [
+  "https://images.unsplash.com/photo-1718888821451-d49db6980a00?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1719420062178-8675f842252a?q=80&w=1822&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1719611418530-353ffc0e92ff?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+];
+---
+
+<script>
+  let itemIndex = 0;
+
+  function runCarousel() {
+    let i;
+    let carouselItems = document.getElementsByClassName("carousel_item");
+    for (i = 0; i < carouselItems.length; i++) {
+      carouselItems[i].style.display = "none";
+    }
+    itemIndex++;
+    if (itemIndex > carouselItems.length) {
+      itemIndex = 1;
+    }
+    carouselItems[itemIndex - 1].style.display = "block";
+
+    setTimeout(runCarousel, 5000);
+  }
+
+  runCarousel();
+</script>
+
+<div class="carousel">
+  <div class="carousel_item fade">
+    <div class="text_content">
+      <h2>
+        Image 1: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos,
+        fuga.
+      </h2>
+    </div>
+    <Image
+      class="carousel_image"
+      src={images[0]}
+      alt="Image 1"
+      height={600}
+      width={1000}
+    />
+  </div>
+  <div class="carousel_item fade">
+    <div class="text_content">
+      <h2>
+        Image 2: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos,
+        fuga.
+      </h2>
+    </div>
+    <Image
+      class="carousel_image"
+      src={images[1]}
+      alt="Image 2"
+      height={600}
+      width={1000}
+    />
+  </div>
+  <div class="carousel_item fade">
+    <div class="text_content">
+      <h2>
+        Image 3: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos,
+        fuga.
+      </h2>
+    </div>
+    <Image
+      class="carousel_image"
+      src={images[2]}
+      alt="Image 3"
+      height={600}
+      width={1000}
+    />
+  </div>
+</div>
+
+<style>
+  .carousel {
+    position: relative;
+    height: 600px;
+  }
+
+  .carousel_item {
+    display: none;
+    height: 1000px;
+    width: 600px;
+  }
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.7;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .text_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 300px;
+    width: 100%;
+  }
+</style>
